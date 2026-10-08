@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="纯前端 HTML5 Canvas 坦克大战 —— 保卫基地，消灭敌军坦克。">
+<title>坦克大战 · Tank Battle</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <h1 class="logo">
+      <span class="logo-mark"></span>
+      坦克大战<span class="logo-sub">TANK BATTLE</span>
+    </h1>
+
+    <div class="stats">
+      <div class="stat"><span class="k">关卡</span><span class="v" id="stat-level">1</span></div>
+      <div class="stat"><span class="k">得分</span><span class="v" id="stat-score">0</span></div>
+      <div class="stat"><span class="k">生命</span><span class="v" id="stat-lives">3</span></div>
+      <div class="stat"><span class="k">剩余敌军</span><span class="v" id="stat-enemies">0</span></div>
+      <div class="stat"><span class="k">火力</span><span class="v" id="stat-power">1</span></div>
+    </div>
+
+    <button class="mute" id="btn-mute" type="button" aria-label="静音开关" title="音效开关">♪</button>
+  </header>
+
+  <main class="stage" id="stage">
+    <canvas id="game"></canvas>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="overlay" id="overlay"></div>
+  </main>
+
+  <section class="touch" id="touch" aria-hidden="true">
+    <div class="dpad">
+      <button type="button" class="pad up"    data-dir="up">▲</button>
+      <button type="button" class="pad left"  data-dir="left">◀</button>
+      <button type="button" class="pad right" data-dir="right">▶</button>
+      <button type="button" class="pad down"  data-dir="down">▼</button>
+    </div>
+    <button type="button" class="fire" id="btn-fire">发射</button>
+  </section>
+
+  <footer class="foot">
+    <div class="keys">
+      <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> / <kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> 移动</span>
+      <span><kbd>空格</kbd> / <kbd>J</kbd> 发射</span>
+      <span><kbd>P</kbd> 暂停</span>
+      <span><kbd>M</kbd> 静音</span>
+    </div>
+    <p class="tip">别让你的基地（老鹰）被打爆。</p>
+  </footer>
+
+</div>
+
+<script src="js/audio.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
